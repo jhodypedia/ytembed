@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Custom YouTube Floating Player SPA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <!-- Animated background blobs -->
+  <div class="bg-blob bg-blob-1"></div>
+  <div class="bg-blob bg-blob-2"></div>
+  <div class="bg-blob bg-blob-3"></div>
+
+  <div class="page-wrapper">
+    <header class="header">
+      <h1 class="app-title">
+        <span class="accent">YouTube</span> Floating Player
+      </h1>
+      <p class="app-subtitle">
+        Tempel URL YouTube, video jalan di player mengambang yang bisa di-minimize, drag &amp; close.
+      </p>
+    </header>
+
+    <main class="main-content">
+      <div class="cards-grid">
+        <!-- FORM CARD -->
+        <section class="card card-form animate-up">
+          <form id="urlForm" class="url-form">
+            <label for="youtubeUrl" class="form-label">URL Video YouTube</label>
+            <div class="input-row">
+              <input
+                type="text"
+                id="youtubeUrl"
+                name="youtubeUrl"
+                class="input-url"
+                placeholder="https://www.youtube.com/watch?v=XXXXXXXXXXX"
+                required
+              />
+              <button type="submit" class="btn-primary">
+                Play
+                <span class="btn-glow"></span>
+              </button>
+            </div>
+            <p class="hint">
+              Contoh: <code>https://youtu.be/dQw4w9WgXcQ</code> atau langsung ID videonya.
+            </p>
+
+            <p class="error-msg" id="errorMsg" style="display:none;"></p>
+          </form>
+        </section>
+
+        <!-- HISTORY CARD -->
+        <section class="card card-history animate-up" id="historyCard">
+          <div class="history-header">
+            <div>
+              <h2 class="history-title">History</h2>
+              <p class="history-subtitle">
+                Klik salah satu untuk memutar kembali.
+              </p>
+            </div>
+            <button class="btn-outline" id="btnClearHistory" type="button">
+              Clear
+            </button>
+          </div>
+          <ul class="history-list" id="historyList">
+            <!-- item history di-inject via JS -->
+          </ul>
+          <p class="history-empty" id="historyEmpty">
+            Belum ada history. Putar video pertama dulu ✨
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>Made with ❤️ | Created By PansaGroup</p>
+    </footer>
+  </div>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
